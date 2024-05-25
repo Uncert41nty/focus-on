@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "205621126921",
+    "project_id": "focus-on-df2d3",
+    "storage_bucket": "focus-on-df2d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205621126921:android:91e3624e43acd339e415d8",
+        "android_client_info": {
+          "package_name": "com.example.focus_on"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL63nCrD6p4RBdXQFdTv3qZ-7A8uy8yLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

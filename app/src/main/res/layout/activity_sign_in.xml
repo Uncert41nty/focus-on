@@ -21,12 +21,14 @@
         android:layout_margin="50dp">
 
         <EditText
+            android:id="@+id/signInPhoneOrMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your E-mail or Phone number"
             android:margin="50dp"/>
 
         <EditText
+            android:id="@+id/signInPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your password"

@@ -26,6 +26,7 @@
             android:text="E-mail"/>
 
         <EditText
+            android:id="@+id/signUpEMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="example@gmail.com"
@@ -37,6 +38,7 @@
             android:text="Phone Number"/>
 
         <EditText
+            android:id="@+id/signUpPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="+7 (xxx) xxx - xx - xx"
@@ -48,6 +50,7 @@
             android:text="User Name"/>
 
         <EditText
+            android:id="@+id/signUpUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nikita Buyanov"
@@ -59,6 +62,7 @@
             android:text="Password"/>
 
         <EditText
+            android:id="@+id/signUpPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Az123456"
@@ -70,6 +74,7 @@
             android:text="Repeat your password"/>
 
         <EditText
+            android:id="@+id/signUpRepeatPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Az123456"
@@ -78,10 +83,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/signInButton"
+        android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="Sign Up"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"/>
 
@@ -98,7 +103,7 @@
             android:text="Already have an account? "/>
 
         <TextView
-            android:id="@+id/createAccountTextView"
+            android:id="@+id/logInClickTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/clueText"

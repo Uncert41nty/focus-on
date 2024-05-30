@@ -3,6 +3,7 @@ package com.example.focus_on.notes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import com.example.focus_on.R;
 
 public class NotesActivity extends AppCompatActivity {
 

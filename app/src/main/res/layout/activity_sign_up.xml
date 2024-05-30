@@ -29,8 +29,7 @@
             android:id="@+id/signUpEMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="example@gmail.com"
-            android:margin="50dp"/>
+            android:hint="example@gmail.com"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,8 +40,7 @@
             android:id="@+id/signUpPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="+7 (xxx) xxx - xx - xx"
-            android:margin="50dp"/>
+            android:hint="+7 (xxx) xxx - xx - xx" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,8 +51,7 @@
             android:id="@+id/signUpUserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nikita Buyanov"
-            android:margin="50dp"/>
+            android:hint="Nikita Buyanov"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,8 +62,7 @@
             android:id="@+id/signUpPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Az123456"
-            android:margin="50dp"/>
+            android:hint="Az123456" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -77,8 +73,7 @@
             android:id="@+id/signUpRepeatPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Az123456"
-            android:margin="50dp"/>
+            android:hint="Az123456" />
 
     </LinearLayout>
 

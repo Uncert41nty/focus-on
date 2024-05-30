@@ -12,46 +12,43 @@
         android:theme="@style/Theme.Focuson"
         tools:targetApi="31">
         <activity
-            android:name=".NotesActivity"
+            android:name=".notes.NotesActivity"
             android:exported="false" />
         <activity
             android:name=".AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".DataActivity"
+            android:name=".profile.DataActivity"
             android:exported="false" />
         <activity
-            android:name=".ThemesActivity"
+            android:name=".profile.ThemesActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".profile.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileEditActivity"
+            android:name=".profile.ProfileEditActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".GoalsActivity"
+            android:name=".goals.GoalsActivity"
             android:exported="false" />
         <activity
-            android:name=".TimeActivity"
+            android:name=".discipline.timer.SessionsActivity"
             android:exported="false" />
         <activity
-            android:name=".SessionsActivity"
+            android:name=".discipline.timer.TimeActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".authorisation.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".authorisation.SignInActivity"
             android:exported="false" />
         <activity
             android:name=".WelcomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,6 +56,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

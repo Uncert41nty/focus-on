@@ -3,6 +3,7 @@ package com.example.focus_on.profile;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import com.example.focus_on.R;
 
 public class ProfileActivity extends AppCompatActivity {
 

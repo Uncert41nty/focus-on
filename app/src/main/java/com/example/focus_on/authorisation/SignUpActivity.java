@@ -35,6 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        auth = new Auth(getApplicationContext());
         signUpDefineViews();
         signUpListeners();
     }
@@ -117,7 +118,7 @@ public class SignUpActivity extends AppCompatActivity {
                                                     auth.setUsername(userName);
                                                     auth.setUser(user);
                                                     auth.setKey(key);
-                                                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                                                    Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                                                     startActivity(intent);
                                                     finish();
                                                 }

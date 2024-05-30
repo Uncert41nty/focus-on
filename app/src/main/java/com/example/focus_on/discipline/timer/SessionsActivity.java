@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.focus_on.R;
+
 public class SessionsActivity extends AppCompatActivity {
 
     @Override

@@ -6,12 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".authorisation.SignUpActivity"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#1F1B36">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/logo"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create an account"
+        android:textColor="#EFEFEF"
         android:gravity="center"
         android:textSize="25sp"/>
     <LinearLayout
@@ -23,57 +30,78 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="E-mail"/>
+            android:text="E-mail"
+            android:textColor="#EFEFEF"/>
 
         <EditText
             android:id="@+id/signUpEMail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="example@gmail.com"/>
+            android:layout_height="50dp"
+            android:hint="example@gmail.com"
+            android:textColor="#A39FAD"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/sms_notification"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone Number"/>
+            android:text="Phone Number"
+            android:textColor="#EFEFEF"/>
 
         <EditText
             android:id="@+id/signUpPhoneNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="+7 (xxx) xxx - xx - xx" />
+            android:layout_height="50dp"
+            android:hint="+7 (xxx) xxx - xx - xx"
+            android:textColor="#A39FAD"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/mobile"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User Name"/>
+            android:text="User Name"
+            android:textColor="#EFEFEF"/>
 
         <EditText
             android:id="@+id/signUpUserName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nikita Buyanov"/>
+            android:layout_height="50dp"
+            android:hint="Nikita Buyanov"
+            android:textColor="#A39FAD"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/user_square"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"/>
+            android:text="Password"
+            android:textColor="#EFEFEF"/>
 
         <EditText
             android:id="@+id/signUpPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Az123456" />
+            android:layout_height="50dp"
+            android:hint="Az123456"
+            android:textColor="#A39FAD"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/lock"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Repeat your password"/>
+            android:text="Repeat your password"
+            android:textColor="#EFEFEF"/>
 
         <EditText
             android:id="@+id/signUpRepeatPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Az123456" />
+            android:layout_height="50dp"
+            android:hint="Az123456"
+            android:textColor="#A39FAD"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/unlock"
+            android:drawableRight="@drawable/eye_slash"/>
 
     </LinearLayout>
 
@@ -83,7 +111,8 @@
         android:layout_height="wrap_content"
         android:text="Sign Up"
         android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp"/>
+        android:layout_marginRight="70dp"
+        android:background="@drawable/pink_gradient_button"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -95,14 +124,16 @@
             android:id="@+id/clueText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account? "/>
+            android:text="Already have an account? "
+            android:textColor="#EFEFEF"/>
 
         <TextView
             android:id="@+id/logInClickTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/clueText"
-            android:text="Log In"/>
+            android:text="Log In"
+            android:textColor="#6256DD"/>
 
 
     </RelativeLayout>

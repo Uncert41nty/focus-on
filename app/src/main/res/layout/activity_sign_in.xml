@@ -6,13 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".authorisation.SignInActivity"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#1F1B36">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/logo"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Log in"
         android:gravity="center"
+        android:textColor="#EFEFEF"
         android:textSize="25sp"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,21 +30,29 @@
         <EditText
             android:id="@+id/signInPhoneOrMail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter your E-mail or Phone number"/>
+            android:layout_height="50dp"
+            android:hint="Enter your E-mail or Phone number"
+            android:textColor="#A39FAD"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/user_square"/>
 
         <EditText
             android:id="@+id/signInPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter your password" />
+            android:layout_height="50dp"
+            android:hint="Enter your password"
+            android:textColor="#A39FAD"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/lock"
+            android:drawableRight="@drawable/eye_slash"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Forgot password?"
-            android:textSize="15dp"
-            android:gravity="end"/>
+            android:textSize="18dp"
+            android:gravity="end"
+            android:textColor="#6256DD"/>
     </LinearLayout>
 
     <Button
@@ -46,7 +61,8 @@
         android:layout_height="wrap_content"
         android:text="Sign In"
         android:layout_marginLeft="70dp"
-        android:layout_marginRight="70dp"/>
+        android:layout_marginRight="70dp"
+        android:background="@drawable/pink_gradient_button"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -58,14 +74,16 @@
             android:id="@+id/clueText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account yet? "/>
+            android:text="Don't have an account yet? "
+            android:textColor="#EFEFEF"/>
 
         <TextView
             android:id="@+id/createAccountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/clueText"
-            android:text="Create an Account"/>
+            android:text="Create an Account"
+            android:textColor="#6256DD"/>
     </RelativeLayout>
 
 

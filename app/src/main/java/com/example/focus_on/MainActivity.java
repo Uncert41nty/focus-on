@@ -1,11 +1,13 @@
 package com.example.focus_on;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.example.focus_on.blocked.apps.BlockedAppsFragment;
 import com.example.focus_on.databinding.ActivityMainBinding;
@@ -16,31 +18,29 @@ import com.example.focus_on.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
+    AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new FocusFragment());
         binding.bottomNavigationView.setBackground(null);
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.focus:
-                    replaceFragment(new FocusFragment());
-                    break;
-                case R.id.goals:
-                    replaceFragment(new GoalsFragment());
-                    break;
-                case R.id.blockedApps:
-                    replaceFragment(new BlockedAppsFragment());
-                    break;
-                case R.id.notes:
-                    replaceFragment(new NotesFragment());
-                    break;
-                case R.id.profile:
-                    replaceFragment(new ProfileFragment());
-                    break;
+            int itemId = item.getItemId();
+            if (itemId == R.id.focus) {
+                replaceFragment(new FocusFragment());
+            } else if (itemId == R.id.goals) {
+                replaceFragment(new GoalsFragment());
+            } else if (itemId == R.id.blockedApps) {
+                replaceFragment(new BlockedAppsFragment());
+            } else if (itemId == R.id.notes) {
+                underDevelopmentAlert();
+                replaceFragment(new FocusFragment());
+            } else if (itemId == R.id.profile) {
+                replaceFragment(new ProfileFragment());
             }
             return true;
         });
@@ -52,4 +52,21 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
     }
+
+    private void underDevelopmentAlert() {
+        AlertDialog.Builder notAvailableAlert = new AlertDialog.Builder(MainActivity.this);
+        String alertText = "This feature is under development at the moment";
+        notAvailableAlert.setTitle(alertText);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+            }
+        }, 3000);
+
+        dialog = notAvailableAlert.create();
+        dialog.show();
+    }
+
 }

@@ -3,24 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".discipline.timer.FocusFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="@drawable/edit_text_background">
+        android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/focusModes"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:tabGravity="center"
+            app:tabMode="fixed"
+            android:layout_margin="40dp"/>
 
-        <LinearLayout
-            android:id="@+id/timerBtn"
-            android:layout_width="wrap_content"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/modesViewPager"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-        </LinearLayout>
-
+            android:layout_below="@id/focusModes"/>
     </RelativeLayout>
 
 </FrameLayout>

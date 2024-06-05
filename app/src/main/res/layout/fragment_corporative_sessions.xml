@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".discipline.timer.TimeStartedFragmet">
+    tools:context=".discipline.timer.modes.CorporativeSessionsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="Focus on your corporation task with your team"
+        android:textColor="@color/white"/>
 
 </FrameLayout>

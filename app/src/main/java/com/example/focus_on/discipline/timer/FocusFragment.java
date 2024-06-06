@@ -13,10 +13,8 @@ import com.example.focus_on.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class FocusFragment extends Fragment {
-    TabLayout modeTabs;
     View v;
-    ViewPager2 viewPager2;
-    ModeTabsFragmentAdapter adapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,6 +26,6 @@ public class FocusFragment extends Fragment {
     }
 
     private void defineViews() {
-        modeTabs = v.findViewById(R.id.focusModes);
+
     }
 }

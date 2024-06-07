@@ -15,36 +15,6 @@
             android:name=".discipline.timer.TimerActivity"
             android:exported="false" />
         <activity
-            android:name=".notes.NotesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AboutActivity"
-            android:exported="false" />
-        <activity
-            android:name=".profile.DataActivity"
-            android:exported="false" />
-        <activity
-            android:name=".profile.ThemesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".profile.SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".profile.ProfileEditActivity"
-            android:exported="false" />
-        <activity
-            android:name=".profile.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".goals.GoalsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".discipline.timer.SessionsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".discipline.timer.TimeActivity"
-            android:exported="false" />
-        <activity
             android:name=".authorisation.SignUpActivity"
             android:exported="false" />
         <activity

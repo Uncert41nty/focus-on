@@ -32,6 +32,9 @@ public class FocusFragment extends Fragment {
     Button sessionMinusButton;
     Button sessionsStartButton;
     int sessionCount = 0;
+    int breakTime = 0;
+    int focusTime = 0;
+    int sessionsToDisplay = 0;
     private final static int LAUNCH_SESSIONS_TIMER = 88;
 
 
@@ -42,7 +45,6 @@ public class FocusFragment extends Fragment {
 
         defineViews();
         mainFuncListeners();
-        sessionCountForStart();
         progress();
 
         updateFocusTimeTextView(0);
@@ -72,6 +74,7 @@ public class FocusFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int focusTimeProgress, boolean b) {
                 updateFocusTimeTextView(focusTimeProgress);
+                focusTime = focusTimeProgress;
             }
 
             @Override
@@ -88,6 +91,7 @@ public class FocusFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int breakTimeProgress, boolean b) {
                 updateBreakTimeTextView(breakTimeProgress);
+                breakTime = breakTimeProgress;
             }
 
             @Override
@@ -101,10 +105,31 @@ public class FocusFragment extends Fragment {
             }
         });
 
+        sessionPlusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sessionCount++;
+                sessionsToDisplay = sessionCount;
+                sessionsTextView.setText(Integer.toString(sessionCount));
+            }
+        });
+
+        sessionMinusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sessionCount--;
+                sessionsToDisplay = sessionCount;
+                sessionsTextView.setText(Integer.toString(sessionCount));
+            }
+        });
+
         sessionsStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(getActivity(), TimerActivity.class);
+                intent.putExtra("focusTime", focusTime);
+                intent.putExtra("breakTime", breakTime);
+                intent.putExtra("sessionCount", sessionsToDisplay);
                 startActivityForResult(intent, LAUNCH_SESSIONS_TIMER);
             }
         });
@@ -126,24 +151,6 @@ public class FocusFragment extends Fragment {
 
         String breakTime = String.format("%02d:%02d:%02d", hours, minutes, secs);
         breakTimeTextView.setText(breakTime);
-    }
-
-    private void sessionCountForStart(){
-        sessionPlusButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sessionCount++;
-                sessionsTextView.setText(Integer.toString(sessionCount));
-            }
-        });
-
-        sessionMinusButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                 sessionCount--;
-                 sessionsTextView.setText(Integer.toString(sessionCount));
-            }
-        });
     }
 
     private void progress() {

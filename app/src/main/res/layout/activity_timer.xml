@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:gravity="center">
         <TextView
-            android:id="@+id/timeTextView"
+            android:id="@+id/countDownTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="00:00:00"
@@ -31,6 +31,15 @@
             android:gravity="center"
             android:textSize="20sp"/>
 
+        <TextView
+            android:id="@+id/breakTimeBetweenSessions"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Break time"
+            android:gravity="center"
+            android:textSize="15sp"/>
+
     </LinearLayout>
 
 
@@ -41,18 +50,16 @@
         android:layout_marginTop="100dp"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/sessionQuitButton"
+            android:id="@+id/sessionPauseButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quit"/>
+            android:text="Pause"/>
 
         <Button
             android:id="@+id/continueSessionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start next session"
-            android:layout_toRightOf="@id/sessionQuitButton"
-            android:layout_marginLeft="50dp"/>
+            android:text="Resume"/>
     </RelativeLayout>
 
 

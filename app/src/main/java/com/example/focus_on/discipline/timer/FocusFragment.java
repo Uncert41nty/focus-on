@@ -1,15 +1,21 @@
 package com.example.focus_on.discipline.timer;
 
+import static android.view.View.GONE;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -36,7 +42,14 @@ public class FocusFragment extends Fragment {
     int focusTime = 0;
     int sessionsToDisplay = 0;
     private final static int LAUNCH_SESSIONS_TIMER = 88;
-
+    private CountDownTimer countDownTimer;
+    long millis;
+    TextView breakTimeCountDownTextView;
+    TextView sessionTimeInfoTextView;
+    Button quitBreakButton;
+    Button startNextSessionButton;
+    LinearLayout focusLinerLayout;
+    LinearLayout breakTimeLinerLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,7 +58,6 @@ public class FocusFragment extends Fragment {
 
         defineViews();
         mainFuncListeners();
-        progress();
 
         updateFocusTimeTextView(0);
         updateBreakTimeTextView(0);
@@ -65,6 +77,12 @@ public class FocusFragment extends Fragment {
         sessionPlusButton = v.findViewById(R.id.sessionPlusButton);
         sessionMinusButton = v.findViewById(R.id.sessionMinusButton);
         sessionsStartButton = v.findViewById(R.id.sessionsStartButton);
+        breakTimeCountDownTextView = v.findViewById(R.id.breakTimeCountDownTextView);
+        sessionTimeInfoTextView = v.findViewById(R.id.sessionTimeInfoTextView);
+        quitBreakButton = v.findViewById(R.id.quitBreakButton);
+        startNextSessionButton = v.findViewById(R.id.startNextSessionButton);
+        focusLinerLayout = v.findViewById(R.id.focusLinerLayout);
+        breakTimeLinerLayout = v.findViewById(R.id.breakLinerLayout);
     }
 
     private void mainFuncListeners() {
@@ -92,6 +110,7 @@ public class FocusFragment extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int breakTimeProgress, boolean b) {
                 updateBreakTimeTextView(breakTimeProgress);
                 breakTime = breakTimeProgress;
+                millis = breakTimeProgress;
             }
 
             @Override
@@ -153,8 +172,37 @@ public class FocusFragment extends Fragment {
         breakTimeTextView.setText(breakTime);
     }
 
-    private void progress() {
+    private void updateCountdownText() {
+        int hours = (int) (millis / 3600000);
+        int minutes = (int) (millis % 3600000) / 60000;
+        int secs = (int) (millis % 60000) / 1000;
 
+        String focusTime = String.format("%02d:%02d:%02d", hours, minutes, secs);
+        breakTimeCountDownTextView.setText(focusTime);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == LAUNCH_SESSIONS_TIMER) {
+            if (resultCode == Activity.RESULT_OK){
+                focusLinerLayout.setVisibility(GONE);
+                breakTimeLinerLayout.setVisibility(View.VISIBLE);
+                countDownTimer = new CountDownTimer(millis, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        millis = millisUntilFinished;
+                        updateCountdownText();
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+                    }
+                }.start();
+            }
+        }
     }
 
 }

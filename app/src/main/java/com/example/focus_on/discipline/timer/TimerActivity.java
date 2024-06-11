@@ -20,6 +20,7 @@ public class TimerActivity extends AppCompatActivity {
     TextView breakTimeBetweenSessions;
     Button pauseButton;
     Button resumeButton;
+    Button resultOkButton;
     AlertDialog dialog;
     private CountDownTimer countDownTimer;
     long receivedTimeInMillis;
@@ -48,6 +49,14 @@ public class TimerActivity extends AppCompatActivity {
         pauseButton = findViewById(R.id.sessionPauseButton);
         resumeButton = findViewById(R.id.continueSessionButton);
         breakTimeBetweenSessions = findViewById(R.id.breakTimeBetweenSessions);
+        resultOkButton = findViewById(R.id.resultOk_Button);
+        resultOkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setResult(Activity.RESULT_OK);
+                finish();
+            }
+        });
     }
 
     private void pauseCountdown() {

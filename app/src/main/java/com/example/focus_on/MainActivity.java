@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.focus_on.authorisation.Auth;
+import com.example.focus_on.authorisation.SignInActivity;
 import com.example.focus_on.blocked.apps.BlockedAppsFragment;
 import com.example.focus_on.databinding.ActivityMainBinding;
 import com.example.focus_on.discipline.timer.FocusFragment;
@@ -19,6 +22,7 @@ import com.example.focus_on.profile.ProfileFragment;
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     AlertDialog dialog;
+    Auth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+
+        auth = new Auth(getApplicationContext());
+        if (auth.getUser() == null){
+            Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void replaceFragment(Fragment fragment) {

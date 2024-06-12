@@ -20,8 +20,9 @@ public class TimerActivity extends AppCompatActivity {
     TextView breakTimeBetweenSessions;
     Button pauseButton;
     Button resumeButton;
-    Button resultOkButton;
+    Button quitButton;
     AlertDialog dialog;
+    AlertDialog dialogConfirm;
     private CountDownTimer countDownTimer;
     long receivedTimeInMillis;
     long receivedBreakTimeInMillis;
@@ -30,12 +31,14 @@ public class TimerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_timer);
         Intent timerIntent = getIntent();
 
         int receivedTimeInSeconds = timerIntent.getIntExtra("focusTime", 0);
-        receivedTimeInMillis = receivedTimeInSeconds;
+        receivedTimeInMillis = receivedTimeInSeconds * 1000L;
         int breakTimeInSeconds = timerIntent.getIntExtra("breakTime", 0);
-        receivedBreakTimeInMillis = breakTimeInSeconds;
+        receivedBreakTimeInMillis = breakTimeInSeconds * 1000L;
+        int sessionCount = timerIntent.getIntExtra("sessionCount",0);
 
 
         defineViews();
@@ -49,14 +52,7 @@ public class TimerActivity extends AppCompatActivity {
         pauseButton = findViewById(R.id.sessionPauseButton);
         resumeButton = findViewById(R.id.continueSessionButton);
         breakTimeBetweenSessions = findViewById(R.id.breakTimeBetweenSessions);
-        resultOkButton = findViewById(R.id.resultOk_Button);
-        resultOkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setResult(Activity.RESULT_OK);
-                finish();
-            }
-        });
+        quitButton = findViewById(R.id.sessionQuitButton);
     }
 
     private void pauseCountdown() {
@@ -105,21 +101,11 @@ public class TimerActivity extends AppCompatActivity {
                         resumeButton.setVisibility(View.VISIBLE);
                     }
                 });
-                pauseAlert.setNegativeButton("Quit", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialog.dismiss();
-                        AlertDialog.Builder quitAlert = new AlertDialog.Builder(TimerActivity.this);
-                        quitAlert.setTitle("Are you sure you want to break your session and today's plan?");
-                        quitAlert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                setResult(Activity.RESULT_CANCELED);
-                                finish();
-                            }
-                        });
-                    }
-                });
+                pauseAlert.setNegativeButton("No, continue session", null);
+
+                dialog = pauseAlert.create();
+                dialog.show();
+
             }
         });
 
@@ -128,9 +114,30 @@ public class TimerActivity extends AppCompatActivity {
             public void onClick(View view) {
                 resumeCountdown();
                 resumeButton.setVisibility(View.GONE);
-                pauseButton.setVisibility(View.VISIBLE);
+                if (pauseAttempts>0) {
+                    pauseButton.setVisibility(View.VISIBLE);
+                }
             }
         });
+
+        quitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder quitAlert = new AlertDialog.Builder(TimerActivity.this);
+                quitAlert.setTitle("Are you sure you want to break sessions?");
+                quitAlert.setPositiveButton("Quit sessions", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        setResult(Activity.RESULT_CANCELED);
+                        finish();
+                    }
+                });
+
+                dialogConfirm = quitAlert.create();
+                dialogConfirm.show();
+            }
+        });
+
         countDownTimer = new CountDownTimer(millis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {

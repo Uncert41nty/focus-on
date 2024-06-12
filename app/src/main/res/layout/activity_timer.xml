@@ -46,27 +46,28 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="100dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="50dp">
+        <Button
+            android:id="@+id/sessionQuitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quit" />
         <Button
             android:id="@+id/sessionPauseButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pause"/>
+            android:text="Pause"
+            android:layout_alignParentRight="true"/>
 
         <Button
             android:id="@+id/continueSessionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resume"/>
+            android:text="Resume"
+            android:visibility="gone"/>
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/resultOk_Button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="(Убрать) Result Ok"/>
 
 
 </LinearLayout>

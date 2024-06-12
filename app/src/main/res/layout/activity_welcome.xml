@@ -41,14 +41,11 @@
             android:text="Your assistant in self-studying and discipline"
             android:gravity="center"
             android:textSize="20sp"
-            android:textColor="#EFEFEFEF"/>
+            android:textColor="#EFEFEFEF"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="40dp"/>
 
-        <Button
-            android:id="@+id/startButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Get started"
-            android:textColor="#EFEFEFEF"/>
+
     </LinearLayout>
 
 </RelativeLayout>

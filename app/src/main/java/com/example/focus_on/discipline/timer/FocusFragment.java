@@ -2,7 +2,10 @@ package com.example.focus_on.discipline.timer;
 
 import static android.view.View.GONE;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -35,6 +38,7 @@ public class FocusFragment extends Fragment {
     Button sessionsStartButton;
     int sessionCount = 1;
     int sessionsToDisplay = 0;
+    int currentSession;
     private final static int LAUNCH_SESSIONS_TIMER = 88;
     private CountDownTimer countDownTimer;
     long millis;
@@ -44,6 +48,8 @@ public class FocusFragment extends Fragment {
     Button startNextSessionButton;
     LinearLayout mainFocusLinearLayout;
     LinearLayout breakTimeLinerLayout;
+    AlertDialog dialog;
+    AlertDialog errorDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +58,7 @@ public class FocusFragment extends Fragment {
 
         defineViews();
         mainFuncListeners();
+        startSessions();
 
         updateFocusTimeTextView(0);
         updateBreakTimeTextView(0);
@@ -117,6 +124,7 @@ public class FocusFragment extends Fragment {
         });
 
         sessionPlusButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SuspiciousIndentation")
             @Override
             public void onClick(View view) {
                 if (sessionCount<5)
@@ -136,7 +144,9 @@ public class FocusFragment extends Fragment {
                 }
             }
         });
+    }
 
+    private void startSessions(){
         sessionsStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -182,6 +192,8 @@ public class FocusFragment extends Fragment {
 
         if (requestCode == LAUNCH_SESSIONS_TIMER) {
             if (resultCode == Activity.RESULT_OK){
+                Intent sessionIntent = new Intent(getActivity(), TimerActivity.class);
+
                 mainFocusLinearLayout.setVisibility(GONE);
                 breakTimeLinerLayout.setVisibility(View.VISIBLE);
                 countDownTimer = new CountDownTimer(millis, 1000) {
@@ -197,6 +209,32 @@ public class FocusFragment extends Fragment {
                     }
                 }.start();
 
+                startNextSessionButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
+                quitBreakButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder quitBreakAlert = new AlertDialog.Builder(getActivity());
+                        quitBreakAlert.setTitle("Are you sure you want to quit sessions?");
+                        quitBreakAlert.setPositiveButton("Yes, Quit", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                countDownTimer.onFinish();
+                                mainFocusLinearLayout.setVisibility(View.VISIBLE);
+                                breakTimeLinerLayout.setVisibility(View.GONE);
+                            }
+                        });
+                        quitBreakAlert.setNegativeButton("No, continue", null);
+
+                        dialog = quitBreakAlert.create();
+                        dialog.show();
+                    }
+                });
 
             }
         }

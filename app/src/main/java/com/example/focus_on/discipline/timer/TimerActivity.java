@@ -27,6 +27,7 @@ public class TimerActivity extends AppCompatActivity {
     long receivedTimeInMillis;
     long receivedBreakTimeInMillis;
     int pauseAttempts = 3;
+    int currentSession;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

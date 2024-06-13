@@ -37,12 +37,13 @@ public class MainActivity extends AppCompatActivity {
             if (itemId == R.id.focus) {
                 replaceFragment(new FocusFragment());
             } else if (itemId == R.id.goals) {
-                replaceFragment(new GoalsFragment());
-            } else if (itemId == R.id.blockedApps) {
-                replaceFragment(new BlockedAppsFragment());
-            } else if (itemId == R.id.notes) {
                 underDevelopmentAlert();
                 replaceFragment(new FocusFragment());
+            } else if (itemId == R.id.blockedApps) {
+                underDevelopmentAlert();
+                replaceFragment(new FocusFragment());
+            } else if (itemId == R.id.notes) {
+                replaceFragment(new NotesFragment());
             } else if (itemId == R.id.profile) {
                 replaceFragment(new ProfileFragment());
             }

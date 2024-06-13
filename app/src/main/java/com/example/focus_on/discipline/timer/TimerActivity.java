@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.focus_on.R;
 
+import java.util.Random;
+
 public class TimerActivity extends AppCompatActivity {
     TextView countDownTextView;
     TextView phrasesTextView;
@@ -27,7 +29,8 @@ public class TimerActivity extends AppCompatActivity {
     long receivedTimeInMillis;
     long receivedBreakTimeInMillis;
     int pauseAttempts = 3;
-    int currentSession;
+    TextView sessionCountTextView;
+    Random rand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +43,44 @@ public class TimerActivity extends AppCompatActivity {
         int breakTimeInSeconds = timerIntent.getIntExtra("breakTime", 0);
         receivedBreakTimeInMillis = breakTimeInSeconds * 1000L;
         int sessionCount = timerIntent.getIntExtra("sessionCount",0);
+        int currentSession = timerIntent.getIntExtra("currentSession", 0);
 
+        String currentSessionText = "Session " + currentSession + "/" + sessionCount;
 
         defineViews();
+        setPhrasesTextView();
+        sessionCountTextView.setText(currentSessionText);
         startCountDown(receivedTimeInMillis);
         breakTimeText(receivedBreakTimeInMillis);
+    }
+
+    private void setPhrasesTextView() {
+        String[] phrasesArray = {
+                "“Your time is limited, don't spend it living someone else's life.” - Steve Jobs.",
+                "“Time takes everything, whether you like it or not.” — Stephen King",
+                "“I am not a product of my circumstances. I am the product of my decisions. - Stephen Covey",
+                "“The best revenge is great success” - Frank Sinatra.",
+                "Time is the greatest of innovators. - Francis Bacon",
+                "Time wasted is existence; time used profitably is life. - E. Jung",
+                "He who does not know the value of time is not born for glory.\n" +
+                        "L. Vauvenargues",
+                "Time does not wait and does not forgive a single lost moment.\n" +
+                        "N. Garin-Mikhailovsky",
+                "Time is a mirage, it shortens in moments of happiness and stretches out in hours of suffering.\n" +
+                        "R. Aldington",
+                "Time is space for developing abilities...\n" +
+                        "K. Marx",
+                "Don't count the days, make the most of them. | Muhammad Ali",
+                "Work hard, dream big.",
+                "Hard work beats talent when talent doesn't work. | Unknown",
+                "Do the hard work first. The easy work will take care of itself. | Dale Carnegie",
+                "Don't look at your watch; do what they do. Do not stop. | Sam Levenson",
+                "Do one thing every day that you dread. | Eleanor Roosevelt",
+                "Undisciplined people are slaves to mood, desire and passion."
+        };
+        rand = new Random();
+        int phrases = rand.nextInt(phrasesArray.length);
+        phrasesTextView.setText(phrases);
     }
 
     private void defineViews() {
@@ -54,6 +90,7 @@ public class TimerActivity extends AppCompatActivity {
         resumeButton = findViewById(R.id.continueSessionButton);
         breakTimeBetweenSessions = findViewById(R.id.breakTimeBetweenSessions);
         quitButton = findViewById(R.id.sessionQuitButton);
+        sessionCountTextView = findViewById(R.id.sessionCountTextView);
     }
 
     private void pauseCountdown() {

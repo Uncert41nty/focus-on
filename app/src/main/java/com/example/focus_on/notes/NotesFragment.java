@@ -11,11 +11,12 @@ import android.view.ViewGroup;
 import com.example.focus_on.R;
 
 public class NotesFragment extends Fragment {
-
+    View v;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notes, container, false);
+        v = inflater.inflate(R.layout.fragment_notes, container, false);
+
+        return v;
     }
 }

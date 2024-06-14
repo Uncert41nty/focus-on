@@ -48,10 +48,10 @@ public class TimerActivity extends AppCompatActivity {
         String currentSessionText = "Session " + currentSession + "/" + sessionCount;
 
         defineViews();
-        setPhrasesTextView();
         sessionCountTextView.setText(currentSessionText);
         startCountDown(receivedTimeInMillis);
         breakTimeText(receivedBreakTimeInMillis);
+        setPhrasesTextView();
     }
 
     private void setPhrasesTextView() {
@@ -79,8 +79,9 @@ public class TimerActivity extends AppCompatActivity {
                 "Undisciplined people are slaves to mood, desire and passion."
         };
         rand = new Random();
-        int phrases = rand.nextInt(phrasesArray.length);
-        phrasesTextView.setText(phrases);
+        int randomIndex = rand.nextInt(phrasesArray.length);
+        String randomString = phrasesArray[randomIndex];
+        phrasesTextView.setText(randomString);
     }
 
     private void defineViews() {

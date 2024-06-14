@@ -53,6 +53,7 @@ public class FocusFragment extends Fragment {
     AlertDialog dialog;
     AlertDialog errorDialog;
     int focusTimeInfoForTextView;
+    int breakTimeProgressGlobal;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -113,6 +114,7 @@ public class FocusFragment extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int breakTimeProgress, boolean b) {
                 updateBreakTimeTextView(breakTimeProgress);
                 millis = breakTimeProgress * 1000L;
+                breakTimeProgressGlobal = breakTimeProgress;
             }
 
             @Override
@@ -236,6 +238,7 @@ public class FocusFragment extends Fragment {
                 } else {
                     mainFocusLinearLayout.setVisibility(GONE);
                     breakTimeLinerLayout.setVisibility(View.VISIBLE);
+                    millis = breakTimeProgressGlobal * 1000L;
                     countDownTimer = new CountDownTimer(millis, 1000) {
                         @Override
                         public void onTick(long millisUntilFinished) {
@@ -253,7 +256,8 @@ public class FocusFragment extends Fragment {
                     startNextSessionButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            intentFunc();
+                             countDownTimer.onFinish();
+                             countDownTimer.cancel();
                         }
                     });
 
@@ -265,7 +269,8 @@ public class FocusFragment extends Fragment {
                             quitBreakAlert.setPositiveButton("Yes, Quit", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    countDownTimer.onFinish();
+                                    countDownTimer.cancel();
+                                    currentSession=1;
                                     mainFocusLinearLayout.setVisibility(View.VISIBLE);
                                     breakTimeLinerLayout.setVisibility(View.GONE);
                                 }
@@ -280,6 +285,7 @@ public class FocusFragment extends Fragment {
             }
 
             if (resultCode == Activity.RESULT_CANCELED) {
+                currentSession=1;
                 mainFocusLinearLayout.setVisibility(View.VISIBLE);
                 breakTimeLinerLayout.setVisibility(GONE);
             }

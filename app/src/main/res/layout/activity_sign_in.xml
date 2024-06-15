@@ -25,27 +25,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="40dp">
+        android:layout_margin="35dp">
 
         <EditText
             android:id="@+id/signInPhoneOrMail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Enter your E-mail or Phone number"
-            android:textColor="#A39FAD"
+            android:textColorHint="#A39FAD"
             android:background="@drawable/edit_text_background"
-            android:drawableLeft="@drawable/user_square"/>
+            android:drawableLeft="@drawable/user_square"
+            android:drawableTint="#A39FAD"
+            android:padding="10dp"/>
 
         <EditText
             android:id="@+id/signInPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Enter your password"
-            android:textColor="#A39FAD"
+            android:textColorHint="#A39FAD"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/lock"
             android:drawableRight="@drawable/eye_slash"
-            android:layout_marginTop="15dp"/>
+            android:drawableTint="#A39FAD"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"/>
 
         <TextView
             android:id="@+id/forgotPasswordTextView"

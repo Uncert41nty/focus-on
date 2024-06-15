@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".notes.CreateNoteActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/createNoteToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/createNoteTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="12dp"
+            android:hint="Note Title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#EFEFEF"
+            android:editable="true"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/createNoteContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="12dp"
+        android:hint="Note Content"
+        android:textSize="15sp"
+        android:textColor="#EFEFEF"
+        android:layout_below="@id/createNoteToolbar"
+        android:padding="15dp"
+        android:gravity="top|left"
+        android:editable="true"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveNoteFloatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/confirm_svgrepo_com"
+        android:background="#4A4569"
+        app:maxImageSize="30dp">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+</RelativeLayout>

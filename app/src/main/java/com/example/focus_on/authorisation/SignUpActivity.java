@@ -9,9 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.example.focus_on.MainActivity;
 import com.example.focus_on.R;
 import com.example.focus_on.user.User;
 import com.google.android.gms.tasks.OnSuccessListener;

@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="50dp">
+        android:layout_margin="40dp">
 
         <EditText
             android:id="@+id/signInPhoneOrMail"
@@ -44,15 +44,18 @@
             android:textColor="#A39FAD"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/lock"
-            android:drawableRight="@drawable/eye_slash"/>
+            android:drawableRight="@drawable/eye_slash"
+            android:layout_marginTop="15dp"/>
 
         <TextView
+            android:id="@+id/forgotPasswordTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Forgot password?"
             android:textSize="18dp"
             android:gravity="end"
-            android:textColor="#6256DD"/>
+            android:textColor="#6256DD"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
     <Button
@@ -65,10 +68,13 @@
         android:background="@drawable/pink_gradient_button"/>
 
     <RelativeLayout
+        android:id="@+id/createAccountLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/clueText"
@@ -78,7 +84,6 @@
             android:textColor="#EFEFEF"/>
 
         <TextView
-            android:id="@+id/createAccountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/clueText"

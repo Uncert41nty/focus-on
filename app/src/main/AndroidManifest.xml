@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Focuson"
         tools:targetApi="31">
         <activity
+            android:name=".authorisation.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".discipline.timer.TimerActivity"
             android:exported="false" />
         <activity

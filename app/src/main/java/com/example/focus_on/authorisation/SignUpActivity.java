@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.focus_on.MainActivity;
@@ -28,7 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
     EditText passwordEditText;
     EditText repeatPasswordEditText;
     Button signUpButton;
-    TextView logInTextView;
+    RelativeLayout logInLayout;
     Auth auth;
 
     @Override
@@ -47,11 +48,11 @@ public class SignUpActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.signUpPassword);
         repeatPasswordEditText = findViewById(R.id.signUpRepeatPassword);
         signUpButton = findViewById(R.id.signUpButton);
-        logInTextView = findViewById(R.id.logInClickTextView);
+        logInLayout = findViewById(R.id.logInLayout);
     }
 
     private void signUpListeners() {
-        logInTextView.setOnClickListener(new View.OnClickListener() {
+        logInLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);

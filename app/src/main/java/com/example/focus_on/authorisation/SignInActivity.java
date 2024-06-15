@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.focus_on.MainActivity;
@@ -25,7 +27,8 @@ public class SignInActivity extends AppCompatActivity {
     EditText eMailOrPhoneNumberEditText;
     EditText passwordEditText;
     Button signInButton;
-    TextView createAccountTextView;
+    RelativeLayout createAccountLayout;
+    TextView forgotPasswordTextView;
     Auth auth;
 
     @Override
@@ -41,11 +44,20 @@ public class SignInActivity extends AppCompatActivity {
         eMailOrPhoneNumberEditText = findViewById(R.id.signInPhoneOrMail);
         passwordEditText = findViewById(R.id.signInPassword);
         signInButton = findViewById(R.id.signInButton);
-        createAccountTextView = findViewById(R.id.createAccountTextView);
+        createAccountLayout = findViewById(R.id.createAccountLayout);
+        forgotPasswordTextView = findViewById(R.id.forgotPasswordTextView);
     }
 
     private void signInListeners() {
-        createAccountTextView.setOnClickListener(new View.OnClickListener() {
+        forgotPasswordTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignInActivity.this, ForgotPasswordActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        createAccountLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);

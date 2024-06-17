@@ -45,7 +45,6 @@ public class NotesFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(),2));
 
         readingFunction();
-        editFunction();
         createNoteFunction();
 
         return v;
@@ -65,9 +64,13 @@ public class NotesFragment extends Fragment {
         noteReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                notes.clear();
                 for (DataSnapshot noteSnapshot: snapshot.getChildren()) {
                     note = noteSnapshot.getValue(Note.class);
-                    notes.add(note);
+                    if (note != null) {
+                        note.setId(noteSnapshot.getKey());
+                        notes.add(note);
+                    }
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -78,7 +81,7 @@ public class NotesFragment extends Fragment {
             }
         });
     }
-    private void editFunction() {
+    private void editFunction(Note note) {
         Intent intent = new Intent(getActivity(), CreateNoteActivity.class);
         intent.putExtra("noteId", note.getId());
         intent.putExtra("noteTitle", note.getNoteTitle());

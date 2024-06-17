@@ -64,4 +64,17 @@ public class Auth {
         edit.putString("user", json);
         edit.apply();
     }
+
+    public void logout() {
+        // Clear SharedPreferences
+        SharedPreferences sp = context.getSharedPreferences("data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.clear();
+        edit.apply();
+
+        // Reset static variables
+        username = null;
+        user = null;
+        key = null;
+    }
 }

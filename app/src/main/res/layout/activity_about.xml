@@ -29,13 +29,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Focus on"
+            android:text="@string/app_name"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Focus on is the app which aim is to help people focus on daily or important activities like studying or self improvement. User can yous this app for his/her own goals. Many features are under development at the moment, but sooner or late they'll be added to app"
+            android:text="@string/app_description"
             android:layout_marginTop="5dp"/>
 
         <RelativeLayout
@@ -48,12 +48,12 @@
                 android:id="@+id/author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Author: "
+                android:text="@string/author"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mutashev Daur"
+                android:text="@string/author_name"
                 android:layout_toRightOf="@id/author"/>
         </RelativeLayout>
 
@@ -67,7 +67,7 @@
                 android:id="@+id/feedback"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Feedback: "
+                android:text="@string/feedback"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"

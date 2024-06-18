@@ -42,6 +42,7 @@ public class NotesFragment extends Fragment {
 
         notes = new ArrayList<>();
         recyclerView = v.findViewById(R.id.recyclerView);
+        //adapter = new NotesAdapter
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(),2));
 
         readingFunction();

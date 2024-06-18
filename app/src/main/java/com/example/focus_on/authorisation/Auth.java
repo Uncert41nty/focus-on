@@ -11,6 +11,7 @@ public class Auth {
     private static String username = null;
     private static User user = null;
     private static String key = null;
+    private static String languageCode = null;
 
     public Auth(Context context) {
         this.context = context;
@@ -65,16 +66,19 @@ public class Auth {
         edit.apply();
     }
 
-    public void logout() {
-        // Clear SharedPreferences
+    public String getLanguageCode() {
+        if (languageCode == null) {
+            SharedPreferences sp = context.getSharedPreferences("data", Context.MODE_PRIVATE);
+            languageCode = sp.getString("key", null);
+        }
+        return languageCode;
+    }
+
+    public void setLanguageCode(String languageCode) {
+        Auth.languageCode = languageCode;
         SharedPreferences sp = context.getSharedPreferences("data", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
-        edit.clear();
+        edit.putString("languageCode", languageCode);
         edit.apply();
-
-        // Reset static variables
-        username = null;
-        user = null;
-        key = null;
     }
 }

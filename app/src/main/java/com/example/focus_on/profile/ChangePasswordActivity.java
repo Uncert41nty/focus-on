@@ -1,26 +1,18 @@
 package com.example.focus_on.profile;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.focus_on.MainActivity;
 import com.example.focus_on.R;
-import com.example.focus_on.authorisation.SignInActivity;
+import com.example.focus_on.authorisation.Auth;
 import com.example.focus_on.user.User;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 public class ChangePasswordActivity extends AppCompatActivity {
     EditText currentPasswordEditText;
@@ -31,10 +23,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
     DatabaseReference db;
     DatabaseReference passwordReference;
     User u;
+    Auth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
+        auth = new Auth(getApplicationContext());
 
         db = FirebaseDatabase.getInstance().getReference();
         passwordReference = db.child("accounts");
@@ -53,33 +47,23 @@ public class ChangePasswordActivity extends AppCompatActivity {
         currentPassword = currentPasswordEditText.getText().toString();
         newPassword = newPasswordEditText.getText().toString();
 
-        Query queryPassword = FirebaseDatabase.getInstance().getReference().child("accounts").orderByChild("password").equalTo(currentPassword);
-        queryPassword.addListenerForSingleValueEvent(new ValueEventListener() {
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot userSnapshot:snapshot.getChildren()) {
-                    u = userSnapshot.getValue(User.class);
-                    if (!currentPassword.equals(u.getPassword())) {
-                        currentPasswordEditText.setError("Incorrect password! Please try again");
-                    } else {
-                        changePasswordButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                passwordReference.child(u.getKey()).child("password").setValue(newPassword);
-                                setResult(Activity.RESULT_OK);
-                                finish();
-                                Toast.makeText(ChangePasswordActivity.this, "Password updated!", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
+            public void onClick(View v) {
+                if (newPasswordEditText.getText().toString().isEmpty()) {
+                    Toast.makeText(ChangePasswordActivity.this, getResources().getText(R.string.field_is_empty), Toast.LENGTH_SHORT).show();
+                } else if (currentPasswordEditText.getText().toString().isEmpty()) {
+                    Toast.makeText(ChangePasswordActivity.this, getResources().getText(R.string.field_is_empty), Toast.LENGTH_SHORT).show();
+                } else if (!currentPassword.equals(auth.getUser().getPassword())) {
+                    Toast.makeText(ChangePasswordActivity.this, getResources().getText(R.string.current_password_does_not_match), Toast.LENGTH_SHORT).show();
+                } else {
+                    passwordReference.child(auth.getKey()).child("password").setValue(newPassword);
                 }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+
+
 
 
     }

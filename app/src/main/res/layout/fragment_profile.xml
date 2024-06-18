@@ -44,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Change the password"
+                    android:text="@string/change_password_layout"
                     android:layout_toRightOf="@id/changePasswordIcon"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -71,7 +71,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="App language"
+                    android:text="@string/change_language_layout"
                     android:layout_toRightOf="@id/changeLanguageIcon"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -98,7 +98,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="About us"
+                    android:text="@string/about_layout"
                     android:layout_toRightOf="@id/aboutIcon"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
@@ -111,7 +111,7 @@
             android:id="@+id/signOutButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign out"
+            android:text="@string/sign_out_button"
             android:background="@drawable/pink_gradient_button"
             android:layout_margin="50dp"/>
 

@@ -1,6 +1,7 @@
 package com.example.focus_on.authorisation;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,19 +16,32 @@ import com.example.focus_on.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Locale;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
     EditText eMailEditText;
     Button resetPasswordButton;
     Button backButton;
     FirebaseAuth firebaseAuth;
+    DatabaseReference db;
+    DatabaseReference forgotPasswordReference;
     String stringEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance().getReference();
+        forgotPasswordReference = db.child("accounts");
 
         defineViews();
         listeners();
@@ -44,10 +58,10 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 stringEmail = eMailEditText.getText().toString().trim();
-                if (TextUtils.isEmpty(stringEmail)) {
+                if (!TextUtils.isEmpty(stringEmail)) {
                     resetPasswordFunction();
                 } else {
-                    eMailEditText.setError("E-mail field left empty");
+                    eMailEditText.setError(getResources().getText(R.string.field_is_empty));
                 }
             }
         });
@@ -61,18 +75,33 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void resetPasswordFunction(){
-        firebaseAuth.sendPasswordResetEmail(stringEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
+        Query queryEmail = FirebaseDatabase.getInstance().getReference().child("accounts").orderByChild("eMail").equalTo(stringEmail);
+        queryEmail.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onSuccess(Void unused) {
-                Toast.makeText(ForgotPasswordActivity.this, "Reset Password link has been sent to your registered Email", Toast.LENGTH_SHORT).show();
-                setResult(Activity.RESULT_OK);
-                resetPasswordButton.setVisibility(View.GONE);
-                backButton.setVisibility(View.VISIBLE);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.hasChildren()) {
+                    eMailEditText.setError("Error! Please check the correctness of entered data");
+                } else {
+                    firebaseAuth.sendPasswordResetEmail(stringEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(ForgotPasswordActivity.this, "Reset Password link has been sent to your registered Email", Toast.LENGTH_SHORT).show();
+                            setResult(Activity.RESULT_OK);
+                            resetPasswordButton.setVisibility(View.GONE);
+                            backButton.setVisibility(View.VISIBLE);
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(ForgotPasswordActivity.this, "Error :- " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
-        }).addOnFailureListener(new OnFailureListener() {
+
             @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ForgotPasswordActivity.this, "Error :- " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Focus-on</string>
+    <string name="field_is_empty">Поле осталось пустым</string>
+    <string name="current_password_does_not_match">Пароль неверный</string>
+    <string name="changing_password">Смена пароля</string>
+    <string name="current_password">Введите нынешний пароль</string>
+    <string name="new_password">Введите новый пароль</string>
+    <string name="change_password_button">Сменить пароль</string>
+    <string name="change_password_layout">Изменить пароль</string>
+    <string name="change_language_layout">Сменить язык приложения</string>
+    <string name="about_layout">О нас</string>
+    <string name="sign_out_button">Выйти из аккаунта</string>
+    <string name="back_button">Назад</string>
+    <string name="app_description">Focus on — это приложение, цель которого — помочь людям сосредоточиться на повседневных или важных делах, таких как учеба или самосовершенствование. Пользователь может использовать это приложение для своих собственных целей. Многие функции сейчас находятся в разработке, но рано или поздно они будут добавлены в приложение.</string>
+    <string name="feedback">"Обратная связь: "</string>
+    <string name="author">"Автор: "</string>
+    <string name="author_name">Муташев Даур</string>
+    <string name="note_title">Заголовок заметки</string>
+    <string name="note_text">Текст заметки</string>
+    <string name="recover_password_text">Восстановление пароля</string>
+    <string name="send_reset_link_button">Сбросить пароль</string>
+    <string name="email_edit_text">Введите вашу эл.почту</string>
+</resources>

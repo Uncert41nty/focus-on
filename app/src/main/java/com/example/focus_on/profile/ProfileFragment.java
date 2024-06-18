@@ -10,9 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.focus_on.R;
 import com.example.focus_on.authorisation.Auth;
+import com.example.focus_on.authorisation.SignInActivity;
 
 public class ProfileFragment extends Fragment {
     View v;
@@ -20,9 +22,11 @@ public class ProfileFragment extends Fragment {
     RelativeLayout appLanguageLayout;
     RelativeLayout aboutLayout;
     Button signOutButton;
+    TextView userNameTextView;
     private final static int LAUNCH_ABOUT_ACTIVITY = 66;
     private final static int LAUNCH_CHANGE_PASSWORD_ACTIVITY = 77;
     Auth auth;
+    String stringUserName;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,6 +37,9 @@ public class ProfileFragment extends Fragment {
         defineViews();
         listeners();
 
+        stringUserName = auth.getUsername();
+        userNameTextView.setText(stringUserName);
+
         return v;
     }
 
@@ -41,6 +48,7 @@ public class ProfileFragment extends Fragment {
         appLanguageLayout = v.findViewById(R.id.changeAppLanguageLayout);
         aboutLayout = v.findViewById(R.id.aboutLayout);
         signOutButton = v.findViewById(R.id.signOutButton);
+        userNameTextView = v.findViewById(R.id.profileUserName);
     }
 
     private void listeners() {
@@ -63,7 +71,11 @@ public class ProfileFragment extends Fragment {
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                auth.logout();
+                auth.setUsername(null);
+                auth.setUser(null);
+                auth.setKey(null);
+                Intent intent = new Intent(getActivity(), SignInActivity.class);
+                startActivity(intent);
             }
         });
     }

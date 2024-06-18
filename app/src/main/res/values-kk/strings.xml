@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Focus-on</string>
+    <string name="field_is_empty">Бұл жер бос қалды</string>
+    <string name="current_password_does_not_match">Құпия сөз дұрыс емес, қайтадан еңгізіңіз</string>
+    <string name="changing_password">Құпия сөзді ауыстыру</string>
+    <string name="current_password">Қазіргі құпия сөзді еңгізіңіз</string>
+    <string name="new_password">Жаңа құпия сөзді еңгізіңіз</string>
+    <string name="change_password_button">Құпия сөзді ауыстыру</string>
+    <string name="change_password_layout">Құпия сөзді ауыстыру</string>
+    <string name="change_language_layout">Қосымшаның тілін ауыстыру</string>
+    <string name="about_layout">Біз тұралы</string>
+    <string name="sign_out_button">Аккаунттан шығу</string>
+    <string name="back_button">Артқа</string>
+    <string name="app_description">Focus on — адамдарға оқу немесе өзін-өзі жетілдіру сияқты күнделікті немесе маңызды әрекеттерге назар аударуға көмектесетін қолданба. Пайдаланушы бұл қолданбаны өз мақсаттары үшін пайдалана алады. Қазіргі уақытта көптеген мүмкіндіктер әзірленуде, бірақ олар ерте ме, кеш пе қолданбаға қосылады</string>
+    <string name="feedback">"Кері байланыс: "</string>
+    <string name="author">"Автор: "</string>
+    <string name="author_name">Муташев Дәуір</string>
+    <string name="email_edit_text">Эл.поштаңызды еңгізіңіз</string>
+</resources>

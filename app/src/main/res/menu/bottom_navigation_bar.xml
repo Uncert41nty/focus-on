@@ -1,35 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/focus"
         android:title="Focus"
         android:icon="@drawable/timer_1"
-        app:iconTint="#A39FAD"/>
+        android:drawableTint="#A39FAD"/>
 
     <item
         android:id="@+id/goals"
         android:title="Goals"
         android:icon="@drawable/task"
-        app:iconTint="#A39FAD"/>
+        android:drawableTint="#A39FAD"/>
 
     <item
         android:id="@+id/blockedApps"
         android:title="Blocked Apps"
         android:icon="@drawable/shield_cross"
-        app:iconTint="#A39FAD"/>
+        android:drawableTint="#A39FAD"/>
 
     <item
         android:id="@+id/notes"
         android:title="Notes"
         android:icon="@drawable/clipboard_text"
-        app:iconTint="#A39FAD"/>
+        android:drawableTint="#A39FAD"/>
 
     <item
         android:id="@+id/profile"
         android:title="Profile"
         android:icon="@drawable/user"
-        app:iconTint="#A39FAD"/>
+        android:drawableTint="#A39FAD"/>
 
 </menu>

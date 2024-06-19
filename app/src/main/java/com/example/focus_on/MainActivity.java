@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 underDevelopmentAlert();
                 replaceFragment(new FocusFragment());
             } else if (itemId == R.id.notes) {
-                replaceFragment(new NotesFragment());
+                underDevelopmentAlert();
+                replaceFragment(new FocusFragment());
             } else if (itemId == R.id.profile) {
                 replaceFragment(new ProfileFragment());
             }

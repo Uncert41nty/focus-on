@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".profile.ProfileFragment"
     android:background="#1F1B36">
 
@@ -13,6 +14,11 @@
         android:orientation="vertical"
         android:padding="40dp">
 
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/logo_activity"/>
+
         <TextView
             android:id="@+id/profileUserName"
             android:layout_width="wrap_content"
@@ -20,7 +26,7 @@
             android:text="UserName"
             android:textColor="#EFEFEF"
             android:textSize="30sp"
-            android:textStyle="bold"/>
+            android:fontFamily="@font/ralewaybold"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,16 +44,19 @@
                 
                 <ImageView
                     android:id="@+id/changePasswordIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/lock_circle"
+                    />
                 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_password_layout"
                     android:layout_toRightOf="@id/changePasswordIcon"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:layout_marginLeft="7dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/ralewaysemibold"/>
                 
             </RelativeLayout>
 
@@ -65,16 +74,18 @@
 
                 <ImageView
                     android:id="@+id/changeLanguageIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/translate"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/change_language_layout"
                     android:layout_toRightOf="@id/changeLanguageIcon"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:layout_marginLeft="7dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/ralewaysemibold"/>
 
             </RelativeLayout>
 
@@ -92,16 +103,18 @@
 
                 <ImageView
                     android:id="@+id/aboutIcon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/people"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/about_layout"
                     android:layout_toRightOf="@id/aboutIcon"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:layout_marginLeft="7dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/ralewaysemibold"/>
 
             </RelativeLayout>
 
@@ -113,7 +126,9 @@
             android:layout_height="wrap_content"
             android:text="@string/sign_out_button"
             android:background="@drawable/pink_gradient_button"
-            android:layout_margin="50dp"/>
+            android:layout_margin="50dp"
+            app:backgroundTint="@null"
+            android:fontFamily="@font/ralewaybold"/>
 
     </LinearLayout>
 

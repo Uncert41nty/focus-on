@@ -4,133 +4,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".authorisation.SignUpActivity"
-    android:orientation="vertical"
+    android:background="#1F1B36"
     android:gravity="center"
-    android:background="#1F1B36">
+    android:orientation="vertical"
+    tools:context=".authorisation.SignUpActivity">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/logo"/>
+        android:background="@drawable/logo_welcome" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/ralewaybold"
+        android:gravity="center"
         android:text="Create an account"
         android:textColor="#EFEFEF"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:textSize="25sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginLeft="35dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="E-mail"
-            android:textColor="#EFEFEF"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/ralewaysemibold"
+            android:text="E-mail"
+            android:textColor="#EFEFEF" />
 
         <EditText
             android:id="@+id/signUpEMail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="example@gmail.com"
-            android:textColorHint="#A39FAD"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/sms_notification"
-            android:drawableTint="#A39FAD"
             android:drawablePadding="7dp"
-            android:padding="10dp"/>
+            android:drawableTint="#A39FAD"
+            android:fontFamily="@font/ralewayregular"
+            android:hint="example@gmail.com"
+            android:padding="10dp"
+            android:textColor="#EFEFEF"
+            android:textColorHint="#A39FAD" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone Number"
-            android:textColor="#EFEFEF"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/ralewaysemibold"
+            android:text="Phone Number"
+            android:textColor="#EFEFEF" />
 
         <EditText
             android:id="@+id/signUpPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="+7 (xxx) xxx - xx - xx"
-            android:textColorHint="#A39FAD"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/mobile"
-            android:drawableTint="#A39FAD"
             android:drawablePadding="7dp"
-            android:padding="10dp"/>
+            android:drawableTint="#A39FAD"
+            android:fontFamily="@font/ralewayregular"
+            android:hint="+7 (xxx) xxx - xx - xx"
+            android:padding="10dp"
+            android:textColor="#EFEFEF"
+            android:textColorHint="#A39FAD" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User Name"
-            android:textColor="#EFEFEF"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/ralewaysemibold"
+            android:text="User Name"
+            android:textColor="#EFEFEF" />
 
         <EditText
             android:id="@+id/signUpUserName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Nikita Buyanov"
-            android:textColorHint="#A39FAD"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/user_square"
-            android:drawableTint="#A39FAD"
             android:drawablePadding="7dp"
-            android:padding="10dp"/>
+            android:drawableTint="#A39FAD"
+            android:fontFamily="@font/ralewayregular"
+            android:hint="Nikita Buyanov"
+            android:padding="10dp"
+            android:textColor="#EFEFEF"
+            android:textColorHint="#A39FAD" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"
-            android:textColor="#EFEFEF"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/ralewaysemibold"
+            android:text="Password"
+            android:textColor="#EFEFEF" />
 
         <EditText
             android:id="@+id/signUpPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Az123456"
-            android:textColorHint="#A39FAD"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/lock"
-            android:drawableTint="#A39FAD"
+            android:drawableRight="@drawable/eye_slash"
             android:drawablePadding="7dp"
-            android:padding="10dp"/>
+            android:drawableTint="#A39FAD"
+            android:fontFamily="@font/ralewayregular"
+            android:hint="Az123456"
+            android:padding="10dp"
+            android:textColor="#EFEFEF"
+            android:textColorHint="#A39FAD" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Repeat your password"
-            android:textColor="#EFEFEF"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/ralewaysemibold"
+            android:text="Repeat your password"
+            android:textColor="#EFEFEF" />
 
         <EditText
             android:id="@+id/signUpRepeatPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Az123456"
-            android:textColorHint="#A39FAD"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/unlock"
-            android:drawableRight="@drawable/eye_slash"
-            android:drawableTint="#A39FAD"
             android:drawablePadding="7dp"
-            android:padding="10dp"/>
+            android:drawableTint="#A39FAD"
+
+            android:fontFamily="@font/ralewayregular"
+            android:hint="Az123456"
+            android:padding="10dp"
+            android:textColor="#EFEFEF"
+            android:textColorHint="#A39FAD" />
 
     </LinearLayout>
 
@@ -138,35 +155,39 @@
         android:id="@+id/signUpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
         android:layout_marginLeft="70dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="70dp"
         android:background="@drawable/pink_gradient_button"
-        android:layout_marginTop="20dp"/>
+        android:fontFamily="@font/ralewaysemibold"
+        android:text="Sign Up"
+        app:backgroundTint="@null" />
 
     <RelativeLayout
         android:id="@+id/logInLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         android:padding="10dp">
 
         <TextView
             android:id="@+id/clueText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ralewaysemibold"
             android:text="Already have an account? "
-            android:textColor="#EFEFEF"/>
+            android:textColor="#EFEFEF" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/clueText"
+            android:fontFamily="@font/ralewaysemibold"
             android:text="Log In"
-            android:textStyle="bold"
-            android:textColor="#6256DD"/>
+            android:textColor="#6256DD"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>

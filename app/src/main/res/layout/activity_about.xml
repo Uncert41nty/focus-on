@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +16,9 @@
         android:text="Back"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/pink_gradient_button"/>
+        android:background="@drawable/pink_gradient_button"
+        android:fontFamily="@font/ralewaybold"
+        app:backgroundTint="@null"/>
 
 
     <LinearLayout
@@ -30,12 +33,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
+            android:fontFamily="@font/ralewaybold"
+            android:textSize="20sp"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_description"
+            android:fontFamily="@font/ralewayregular"
+            android:textSize="15sp"
             android:layout_marginTop="5dp"/>
 
         <RelativeLayout
@@ -49,11 +56,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/author"
+                android:fontFamily="@font/ralewaybold"
+                android:textSize="15sp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/author_name"
+                android:fontFamily="@font/ralewayregular"
+                android:textSize="15sp"
                 android:layout_toRightOf="@id/author"/>
         </RelativeLayout>
 
@@ -68,11 +79,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/feedback"
+                android:textSize="15sp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Instagram - @prod1gal.s0n"
+                android:fontFamily="@font/ralewayregular"
+                android:textSize="15sp"
                 android:layout_toRightOf="@id/feedback"/>
         </RelativeLayout>
 

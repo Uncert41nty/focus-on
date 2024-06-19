@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".discipline.timer.FocusFragment"
     android:background="#1F1B36">
 
@@ -19,84 +20,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
-                android:layout_margin="30dp">
+                android:layout_margin="30dp"
+                >
 
-                <LinearLayout
-                    android:id="@+id/focusProgressLinearlayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
                     android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:layout_marginBottom="30dp"
-                    android:background="@drawable/blue_gradient"
-                    android:padding="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Your progress"
-                            android:textStyle="bold"
-                            android:layout_marginBottom="5dp"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="5dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Yesterday: success sessions - " />
-
-                            <TextView
-                                android:id="@+id/successSessionsCount"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="0" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=", broken sessions - "/>
-
-                            <TextView
-                                android:id="@+id/brokenSessionsCount"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="0" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Today's goal: continue plan of  "/>
-                        <TextView
-                            android:id="@+id/goalSessionsCount"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" success sessions"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
+                    android:background="@drawable/logo_activity"/>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -110,13 +41,17 @@
                         android:layout_height="wrap_content"
                         android:text="00:00:00"
                         android:gravity="end"
-                        android:textColor="#EFEFEF"/>
+                        android:textColor="#EFEFEF"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/ralewaybold"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Set focus time"
-                        android:textColor="#EFEFEF"/>
+                        android:textColor="#EFEFEF"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/ralewaybold"/>
 
                 </RelativeLayout>
 
@@ -141,13 +76,17 @@
                         android:layout_height="wrap_content"
                         android:text="00:00:00"
                         android:gravity="end"
-                        android:textColor="#EFEFEF"/>
+                        android:textColor="#EFEFEF"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/ralewaybold"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Set break time"
-                        android:textColor="#EFEFEF"/>
+                        android:textColor="#EFEFEF"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/ralewaybold"/>
 
                 </RelativeLayout>
 
@@ -168,7 +107,9 @@
                         android:layout_height="wrap_content"
                         android:text="Sessions count"
                         android:layout_centerVertical="true"
-                        android:textColor="#EFEFEF"/>
+                        android:textColor="#EFEFEF"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/ralewaybold"/>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -181,23 +122,29 @@
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:text="-"
-                            android:layout_marginRight="10dp"
-                            />
+                            android:fontFamily="@font/ralewaybold"
+                            android:layout_marginRight="12dp"
+                            android:background="@drawable/pink_gradient_button"
+                            app:backgroundTint="@null"/>
 
                         <TextView
                             android:id="@+id/sessionsTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1"
-                            android:textColor="#EFEFEF"/>
+                            android:textColor="#EFEFEF"
+                            android:textSize="20sp"
+                            android:fontFamily="@font/ralewaybold"/>
 
                         <Button
                             android:id="@+id/sessionPlusButton"
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
                             android:text="+"
-                            android:layout_marginLeft="10dp"
-                            />
+                            android:fontFamily="@font/ralewaybold"
+                            android:layout_marginLeft="12dp"
+                            android:background="@drawable/pink_gradient_button"
+                            app:backgroundTint="@null"/>
 
                     </LinearLayout>
 
@@ -210,7 +157,9 @@
                     android:layout_marginTop="50dp"
                     android:layout_gravity="center"
                     android:text="START"
-                    android:background="@drawable/edit_text_background"/>
+                    android:fontFamily="@font/ralewaybold"
+                    android:background="@drawable/pink_gradient_button"
+                    app:backgroundTint="@null"/>
 
             </LinearLayout>
 
@@ -221,6 +170,12 @@
                 android:layout_gravity="center"
                 android:orientation="vertical"
                 android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/logo_activity"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -238,16 +193,19 @@
                             android:layout_height="wrap_content"
                             android:text="Break time left"
                             android:layout_centerVertical="true"
-                            android:textColor="#EFEFEF"/>
+                            android:textColor="#EFEFEF"
+                            android:textSize="30sp"
+                            android:fontFamily="@font/ralewaybold"/>
 
                         <TextView
                             android:id="@+id/breakTimeCountDownTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="00:00:00"
-                            android:textSize="30sp"
+                            android:fontFamily="@font/ralewaybold"
                             android:gravity="end"
-                            android:textColor="#EFEFEF"/>
+                            android:text="00:00:00"
+                            android:textColor="#EFEFEF"
+                            android:textSize="30sp" />
 
                     </RelativeLayout>
 
@@ -263,16 +221,19 @@
                             android:text="Time you need to focus on the next session"
                             android:layout_centerVertical="true"
                             android:layout_toLeftOf="@id/sessionTimeInfoTextView"
-                            android:textColor="#EFEFEF"/>
+                            android:textColor="#EFEFEF"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/ralewaysemibold"/>
 
                         <TextView
                             android:id="@+id/sessionTimeInfoTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="00:00:00"
-                            android:textSize="30sp"
+                            android:textSize="20sp"
                             android:layout_alignParentRight="true"
-                            android:textColor="#EFEFEF"/>
+                            android:textColor="#EFEFEF"
+                            android:fontFamily="@font/ralewaysemibold"/>
 
                     </RelativeLayout>
                 </LinearLayout>
@@ -295,14 +256,20 @@
                             android:layout_height="wrap_content"
                             android:text="Quit"
                             android:layout_toLeftOf="@id/startNextSessionButton"
-                            android:layout_marginRight="100dp"/>
+                            android:layout_marginRight="100dp"
+                            app:backgroundTint="@null"
+                            android:background="@drawable/pink_gradient_button"
+                            android:fontFamily="@font/ralewaybold"/>
 
                         <Button
                             android:id="@+id/startNextSessionButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Continue"
-                            android:layout_alignParentRight="true" />
+                            android:layout_alignParentRight="true"
+                            app:backgroundTint="@null"
+                            android:background="@drawable/pink_gradient_button"
+                            android:fontFamily="@font/ralewaybold"/>
 
                     </RelativeLayout>
 

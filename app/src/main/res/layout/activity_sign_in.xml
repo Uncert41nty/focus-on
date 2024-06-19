@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/logo"/>
+        android:background="@drawable/logo_welcome"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -20,7 +20,9 @@
         android:text="Log in"
         android:gravity="center"
         android:textColor="#EFEFEF"
-        android:textSize="25sp"/>
+        android:textSize="25sp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/ralewaybold"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,12 +33,14 @@
             android:id="@+id/signInPhoneOrMail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Enter your E-mail or Phone number"
+            android:hint="E-mail or Phone number"
             android:textColorHint="#A39FAD"
             android:textColor="#EFEFEF"
+            android:fontFamily="@font/ralewayregular"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/user_square"
             android:drawableTint="#A39FAD"
+            android:drawablePadding="5dp"
             android:padding="10dp"/>
 
         <EditText
@@ -46,10 +50,12 @@
             android:hint="Enter your password"
             android:textColorHint="#A39FAD"
             android:textColor="#EFEFEF"
+            android:fontFamily="@font/ralewayregular"
             android:background="@drawable/edit_text_background"
             android:drawableLeft="@drawable/lock"
             android:drawableRight="@drawable/eye_slash"
             android:drawableTint="#A39FAD"
+            android:drawablePadding="5dp"
             android:layout_marginTop="15dp"
             android:padding="10dp"/>
 
@@ -59,6 +65,7 @@
             android:layout_height="wrap_content"
             android:text="Forgot password?"
             android:textSize="18dp"
+            android:fontFamily="@font/ralewaysemibold"
             android:gravity="end"
             android:textColor="#6256DD"
             android:layout_marginTop="10dp"/>
@@ -71,7 +78,9 @@
         android:text="Sign In"
         android:layout_marginLeft="70dp"
         android:layout_marginRight="70dp"
-        android:background="@drawable/pink_gradient_button"/>
+        android:background="@drawable/pink_gradient_button"
+        android:fontFamily="@font/ralewaybold"
+        app:backgroundTint="@null"/>
 
     <RelativeLayout
         android:id="@+id/createAccountLayout"
@@ -87,14 +96,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have an account yet? "
-            android:textColor="#EFEFEF"/>
+            android:textSize="15sp"
+            android:textColor="#EFEFEF"
+            android:fontFamily="@font/ralewaysemibold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/clueText"
             android:text="Create an Account"
-            android:textColor="#6256DD"/>
+            android:textSize="15sp"
+            android:textColor="#6256DD"
+            android:fontFamily="@font/ralewaysemibold"/>
     </RelativeLayout>
 
 

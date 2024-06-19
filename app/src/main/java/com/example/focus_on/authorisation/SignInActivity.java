@@ -76,10 +76,10 @@ public class SignInActivity extends AppCompatActivity {
 
                 if (eMailOrPhoneNumber.isEmpty()) {
                     isEverythingOK = false;
-                    eMailOrPhoneNumberEditText.setError("This field is left empty");
+                    eMailOrPhoneNumberEditText.setError(getResources().getText(R.string.field_is_empty));
                 } else if (password.isEmpty()) {
                     isEverythingOK = false;
-                    passwordEditText.setError("This field is left empty");
+                    passwordEditText.setError(getResources().getText(R.string.field_is_empty));
                 }
 
                 if (isEverythingOK) {
@@ -92,12 +92,12 @@ public class SignInActivity extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (!snapshot.hasChildren()) {
-                                    eMailOrPhoneNumberEditText.setError("Error! Please check the correctness of entered data");
+                                    eMailOrPhoneNumberEditText.setError(getResources().getText(R.string.error_entered_data));
                                 } else {
                                     for (DataSnapshot userSnapshot:snapshot.getChildren()) {
                                         User u = userSnapshot.getValue(User.class);
                                         if (!password.equals(u.getPassword())) {
-                                            passwordEditText.setError("Incorrect password! Please try again");
+                                            passwordEditText.setError(getResources().getText(R.string.incorrect_password));
                                         } else {
                                             auth.setUsername(u.getUserName());
                                             auth.setUser(u);
@@ -122,12 +122,12 @@ public class SignInActivity extends AppCompatActivity {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (!snapshot.hasChildren()) {
-                                    eMailOrPhoneNumberEditText.setError("Error! Please check the correctness of entered data");
+                                    eMailOrPhoneNumberEditText.setError(getResources().getText(R.string.error_entered_data));
                                 } else {
                                     for (DataSnapshot userSnapshot:snapshot.getChildren()) {
                                         User u = userSnapshot.getValue(User.class);
                                         if (!password.equals(u.getPassword())) {
-                                            passwordEditText.setError("Incorrect password! Please try again");
+                                            passwordEditText.setError(getResources().getText(R.string.incorrect_password));
                                         } else {
                                             auth.setUsername(u.getUserName());
                                             auth.setUser(u);

@@ -10,12 +10,6 @@
     android:gravity="center"
     android:background="#1F1B36">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/logo_activity"
-        android:layout_marginBottom="30dp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +19,7 @@
             android:id="@+id/sessionCountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sessions"
+            android:text="@string/sessions"
             android:textSize="20sp"
             android:textColor="#EFEFEF"
             android:fontFamily="@font/ralewaybold"/>
@@ -55,7 +49,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Break time"
+            android:text="@string/break_time"
             android:textColor="#EFEFEF"
             android:fontFamily="@font/ralewaysemibold"
             android:gravity="center"
@@ -74,7 +68,7 @@
             android:id="@+id/sessionQuitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quit"
+            android:text="@string/quit_button"
             android:fontFamily="@font/ralewaybold"
             app:backgroundTint="@null"
             android:background="@drawable/pink_gradient_button"/>
@@ -82,7 +76,7 @@
             android:id="@+id/sessionPauseButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pause"
+            android:text="@string/pause_button"
             android:fontFamily="@font/ralewaybold"
             android:layout_alignParentRight="true"
             android:background="@drawable/pink_gradient_button"
@@ -92,7 +86,7 @@
             android:id="@+id/continueSessionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resume"
+            android:text="@string/resume_button"
             android:visibility="gone"
             android:background="@drawable/pink_gradient_button"
             app:backgroundTint="@null"/>

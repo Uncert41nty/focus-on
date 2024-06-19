@@ -3,8 +3,10 @@ package com.example.focus_on.profile;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.focus_on.MainActivity;
 import com.example.focus_on.R;
 import com.example.focus_on.authorisation.Auth;
 import com.example.focus_on.authorisation.SignInActivity;
@@ -27,6 +30,8 @@ public class ProfileFragment extends Fragment {
     private final static int LAUNCH_CHANGE_PASSWORD_ACTIVITY = 77;
     Auth auth;
     String stringUserName;
+    AlertDialog dialog;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,6 +70,25 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent aboutIntent = new Intent(getActivity(), AboutActivity.class);
                 startActivityForResult(aboutIntent, LAUNCH_ABOUT_ACTIVITY);
+            }
+        });
+
+        appLanguageLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder notAvailableAlert = new AlertDialog.Builder(getActivity());
+                String alertText = (String) getResources().getText(R.string.under_development);
+                notAvailableAlert.setTitle(alertText);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        dialog.dismiss();
+                    }
+                }, 3000);
+
+                dialog = notAvailableAlert.create();
+                dialog.show();
             }
         });
 

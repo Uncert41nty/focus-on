@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void underDevelopmentAlert() {
         AlertDialog.Builder notAvailableAlert = new AlertDialog.Builder(MainActivity.this);
-        String alertText = "This feature is under development at the moment";
+        String alertText = (String) getResources().getText(R.string.under_development);
         notAvailableAlert.setTitle(alertText);
 
         new Handler().postDelayed(new Runnable() {

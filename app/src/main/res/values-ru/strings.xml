@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Focus-on</string>
     <string name="field_is_empty">Поле осталось пустым</string>
-    <string name="current_password_does_not_match">Пароль неверный</string>
+    <string name="current_password_does_not_match">Пароль неверный, введите снова</string>
     <string name="changing_password">Смена пароля</string>
     <string name="current_password">Введите нынешний пароль</string>
     <string name="new_password">Введите новый пароль</string>
@@ -21,4 +21,38 @@
     <string name="recover_password_text">Восстановление пароля</string>
     <string name="send_reset_link_button">Сбросить пароль</string>
     <string name="email_edit_text">Введите вашу эл.почту</string>
+    <string name="reset_password">Смените пароль</string>
+    <string name="enter_email">Введите свою эл.почту</string>
+    <string name="enter_password">Введите свой пароль</string>
+    <string name="password">Пароль</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="email">Эл.почта</string>
+    <string name="back">назад</string>
+    <string name="quit_button">Выйти</string>
+    <string name="pause_button">Пауза</string>
+    <string name="resume_button">Возобновить</string>
+    <string name="sessions">Сессии</string>
+    <string name="break_time">Время перерыва</string>
+    <string name="create_account">Создать аккаунт</string>
+    <string name="log_in">Войдите</string>
+    <string name="have_account">"Уже имеется аккаунт? "</string>
+    <string name="sign_up_button">Зарегистрироваться</string>
+    <string name="sign_in_button">Авторизоваться</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="dont_have">"Ещё нет аккаунта? "</string>
+    <string name="forgot_password">Забыл пароль</string>
+    <string name="continue_button">Продолжить</string>
+    <string name="set_focus_time">Установить время сессии</string>
+    <string name="set_break_time">Установить время перерыва</string>
+    <string name="session_count">Количество сессии</string>
+    <string name="error">"Ошибка :- "</string>
+    <string name="error_entered_data">Ошибка! Проверьте введенные данные</string>
+    <string name="password_reset_link">Ссылка на сброс пароля отправлян на вашу почту</string>
+    <string name="incorrect_password">Неправильный пароль! Повторите попытку</string>
+    <string name="under_development">Данная функция находится в разработке</string>
+    <string name="password_consist">Пароль должен состоять как минимум из 8 символов</string>
+    <string name="password_consist_latin">Пароль должен состоять только из латинских букв, символов подчеркивания или цифр.</string>
+    <string name="email_exist">Аккаунт с такой эл.почтой уже существует!</string>
+    <string name="phone_exist">Аккаунт с таким номером телефона уже существует</string>
 </resources>

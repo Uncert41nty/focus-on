@@ -72,25 +72,25 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if (userName.isEmpty()) {
                     isEverythingOK = false;
-                    userNameEditText.setError("This field is left empty");
+                    userNameEditText.setError(getResources().getText(R.string.field_is_empty));
                 } else if (eMail.isEmpty()) {
                     isEverythingOK = false;
-                    eMailEditText.setError("This field is left empty");
+                    eMailEditText.setError(getResources().getText(R.string.field_is_empty));
                 } else if (password.isEmpty()) {
                     isEverythingOK = false;
-                    passwordEditText.setError("This field is left empty");
+                    passwordEditText.setError(getResources().getText(R.string.field_is_empty));
                 } else if (repeatPassword.isEmpty()) {
                     isEverythingOK = false;
-                    repeatPasswordEditText.setError("This field is left empty");
+                    repeatPasswordEditText.setError(getResources().getText(R.string.field_is_empty));
                 } else if (password.length() < 8) {
                     isEverythingOK = false;
-                    passwordEditText.setError("The password must consist of at least 8 characters");
+                    passwordEditText.setError(getResources().getText(R.string.password_consist));
                 } else if (!password.matches("\\w+")) {
                     isEverythingOK = false;
-                    passwordEditText.setError("The password must consist only of Latin letters, underscores or numbers.");
+                    passwordEditText.setError(getResources().getText(R.string.password_consist_latin));
                 } else if (!repeatPassword.equals(password)) {
                     isEverythingOK = false;
-                    repeatPasswordEditText.setError("Passwords don't match");
+                    repeatPasswordEditText.setError(getResources().getText(R.string.current_password_does_not_match));
                 }
 
                 if (isEverythingOK) {
@@ -99,14 +99,14 @@ public class SignUpActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if (snapshot.hasChildren()) {
-                                eMailEditText.setError("Account with this e-mail already exists!");
+                                eMailEditText.setError(getResources().getText(R.string.email_exist));
                             } else {
                                 Query queryPhoneNumber = FirebaseDatabase.getInstance().getReference().child("accounts").orderByChild("phoneNumber").equalTo(phoneNumber);
                                 queryPhoneNumber.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         if (snapshot.hasChildren()) {
-                                            phoneNumberEditText.setError("Account with this Phone Number already exists!");
+                                            phoneNumberEditText.setError(getResources().getText(R.string.phone_exist));
                                         } else {
                                             DatabaseReference accounts = FirebaseDatabase.getInstance().getReference().child("accounts");
                                             String key = accounts.push().getKey();

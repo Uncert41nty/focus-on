@@ -1,6 +1,8 @@
 package com.example.focus_on.profile;
 
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,8 +24,8 @@ public class ChangePasswordActivity extends AppCompatActivity {
     String newPassword;
     DatabaseReference db;
     DatabaseReference passwordReference;
-    User u;
     Auth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

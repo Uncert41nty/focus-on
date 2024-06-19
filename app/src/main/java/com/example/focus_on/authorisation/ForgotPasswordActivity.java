@@ -54,6 +54,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void listeners() {
+
         resetPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,12 +81,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (!snapshot.hasChildren()) {
-                    eMailEditText.setError("Error! Please check the correctness of entered data");
+                    eMailEditText.setError(getResources().getText(R.string.error_entered_data));
                 } else {
                     firebaseAuth.sendPasswordResetEmail(stringEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            Toast.makeText(ForgotPasswordActivity.this, "Reset Password link has been sent to your registered Email", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ForgotPasswordActivity.this, getResources().getText(R.string.password_reset_link), Toast.LENGTH_SHORT).show();
                             setResult(Activity.RESULT_OK);
                             resetPasswordButton.setVisibility(View.GONE);
                             backButton.setVisibility(View.VISIBLE);
@@ -93,7 +94,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(ForgotPasswordActivity.this, "Error :- " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ForgotPasswordActivity.this, getResources().getText(R.string.error) + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

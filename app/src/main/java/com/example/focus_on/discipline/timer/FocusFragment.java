@@ -27,9 +27,6 @@ import com.example.focus_on.R;
 
 public class FocusFragment extends Fragment {
     View v;
-    TextView successSessionsCount;
-    TextView brokenSessionsCount;
-    TextView goalSessionsCount;
     TextView focusTimeTextView;
     TextView breakTimeTextView;
     TextView sessionsTextView;
@@ -70,9 +67,6 @@ public class FocusFragment extends Fragment {
     }
 
     private void defineViews() {
-        successSessionsCount = v.findViewById(R.id.successSessionsCount);
-        brokenSessionsCount= v.findViewById(R.id.brokenSessionsCount);
-        goalSessionsCount = v.findViewById(R.id.goalSessionsCount);
         focusTimeTextView = v.findViewById(R.id.focusTimeTextView);
         breakTimeTextView = v.findViewById(R.id.breakTimeTextView);
         sessionsTextView = v.findViewById(R.id.sessionsTextView);

@@ -55,4 +55,6 @@
     <string name="password_consist_latin">Пароль должен состоять только из латинских букв, символов подчеркивания или цифр.</string>
     <string name="email_exist">Аккаунт с такой эл.почтой уже существует!</string>
     <string name="phone_exist">Аккаунт с таким номером телефона уже существует</string>
+    <string name="sign_in">Авторизация</string>
+    <string name="email_or_phone">Эл.почта или номер телефона</string>
 </resources>

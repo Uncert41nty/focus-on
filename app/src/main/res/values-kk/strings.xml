@@ -55,4 +55,6 @@
     <string name="password_consist_latin">Құпия сөз тек латын әріптері, астын сызу немесе сандардан тұруы керек.</string>
     <string name="email_exist">Бұл эл.пошта бар есептік жазба бұрыннан бар!</string>
     <string name="phone_exist">Бірдей телефон нөмірі бар есептік жазба бұрыннан бар</string>
+    <string name="sign_in">Авторизация</string>
+    <string name="email_or_phone">Эл.пошта немес телефон нөмірі</string>
 </resources>

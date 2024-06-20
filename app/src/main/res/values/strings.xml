@@ -55,4 +55,6 @@
     <string name="password_consist_latin">The password must consist only of Latin letters, underscores or numbers.</string>
     <string name="email_exist">Account with this e-mail already exists!</string>
     <string name="phone_exist">Account with this Phone number already exists!</string>
+    <string name="sign_in">Authorisation</string>
+    <string name="email_or_phone">E-mail or Phone number</string>
 </resources>

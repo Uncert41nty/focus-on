@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/log_in"
+        android:text="@string/sign_in"
         android:gravity="center"
         android:textColor="#EFEFEF"
         android:textSize="25sp"
@@ -33,7 +33,7 @@
             android:id="@+id/signInPhoneOrMail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="E-mail or Phone number"
+            android:hint="@string/email_or_phone"
             android:textColorHint="#A39FAD"
             android:textColor="#EFEFEF"
             android:fontFamily="@font/ralewayregular"
